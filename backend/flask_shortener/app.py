@@ -85,6 +85,9 @@ def update_doc(slug):
                 {'slug': slug},
                 {'$set': {'web': res['web']}},return_document=ReturnDocument.AFTER
                 )
+
+    if res.get('slug', None):
+        abort(403)
     
     del entry['_id']
     return jsonify(entry)
@@ -101,7 +104,7 @@ def unprocessable(error):
     return jsonify({
                     "success": False, 
                     "error": 400,
-                    "message": "Your response is missing one or multiple of the required arguments"
+                    "message": "Your request is missing one or multiple of the required arguments"
                     }), 400
 
 @app.errorhandler(422)
@@ -109,7 +112,7 @@ def unprocessable(error):
     return jsonify({
                     "success": False, 
                     "error": 422,
-                    "message": "Slug already exists"
+                    "message": "Unprocessable i.e. Slug already exists"
                     }), 422
 
 @app.errorhandler(404)
@@ -119,6 +122,14 @@ def unprocessable(error):
                     "error": 404,
                     "message": "Resource not found"
                     }), 404
+
+@app.errorhandler(403)
+def unprocessable(error):
+    return jsonify({
+                    "success": False, 
+                    "error": 403,
+                    "message": "Forbidden"
+                    }), 403
 
 
 if __name__ == '__main__':
