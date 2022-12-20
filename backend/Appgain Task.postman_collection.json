@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "6af0b3de-1e95-45f1-884f-1eec81f0ff63",
+		"name": "Appgain Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15148206"
+	},
+	"item": [
+		{
+			"name": "List Shortlinks",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Create Shortlink",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"slug\":\"12345\",\r\n    \"ios\":{\r\n        \"primary\":\"ios.primary.com\",\r\n        \"fallback\":\"ios.fallback.com\"\r\n    },\r\n    \"android\":{\r\n        \"primary\":\"android.primary.com\",\r\n        \"fallback\":\"android.fallback.com\"\r\n    },\r\n    \"web\":\"web.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ios\":{\r\n        \"primary\":\"ios2.primary.com\",\r\n        \"fallback\":\"ios2.fallback.com\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/shortlinks/test1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"shortlinks",
+						"test1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
