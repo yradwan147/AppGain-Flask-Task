@@ -2,6 +2,8 @@ from flask import Flask, request, abort, jsonify
 import bson
 import db
 from pymongo import ReturnDocument
+from flask_cors import CORS
+
 
 
 def create_entry(slug, ios, android, web):
@@ -28,6 +30,10 @@ def create_entry(slug, ios, android, web):
             }
 
 app = Flask(__name__)
+
+CORS(app)
+
+
 @app.route('/')
 def flask_mongodb_atlas():
     return "flask mongodb atlas!"
