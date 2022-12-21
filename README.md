@@ -20,7 +20,8 @@ A PUT request endpoint that recieves JSON data format including the targeted att
 
 ### Database Schema
 
-```{
+```
+{
     slug: "s5G1f3"
     ios:
         primary: "http://..."
