@@ -26,8 +26,8 @@ A PUT request endpoint that recieves JSON data format including the targeted att
         primary: "http://..."
         fallback: "http://..."
     android:
-    primary: "http://..."
-    fallback: "http://..."
+        primary: "http://..."
+        fallback: "http://..."
     web: "http://..."
 }
 ```
