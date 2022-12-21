@@ -9,12 +9,15 @@ The 3 main requests present in the backend and frontend are as follows
 These 3 functionalities are available as endpoints in the backend which are called from the frontend.
 
 #### List
+http://127.0.0.1:8000/shortlinks
 A GET request endpoint that returns all existing mongoDB documents in a list for preview.
 
 #### Add
+http://127.0.0.1:8000/shortlinks
 A POST request endpoint that recieves JSON data format including all required arguments (i.e. web, ios, android and/or slug) and uses this data to create a new document in the database.
 
 #### Update
+http://127.0.0.1:8000/shortlinks/<slug>
 A PUT request endpoint that recieves JSON data format including the targeted attributes to update and updates the targeted document accordingly based on the slug provided in the URL as an argument.
 
 
