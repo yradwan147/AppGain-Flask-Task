@@ -29,3 +29,6 @@ A PUT request endpoint that recieves JSON data format including the targeted att
     fallback: "http://..."
     web: "http://..."
 }
+
+To run the backend, download the needed dependencies from requirements.txt, and run "python app.py". (Used Python is 3.8.10)
+To run the frontend, download node modules in the frontend folder and run "npm run dev" to run a development build.
